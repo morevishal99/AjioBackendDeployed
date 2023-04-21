@@ -102,7 +102,7 @@ authRoute.get("/", async (req, res) => {
 //   }
 // });
 // Delete user by ID
-authRoute.delete("delete/:id", async (req, res) => {
+authRoute.delete("/delete/:id", async (req, res) => {
   try {
     const result = await UserModel.findByIdAndDelete(req.params.id);
     if (result) {
@@ -117,7 +117,7 @@ authRoute.delete("delete/:id", async (req, res) => {
 });
 
 // Update user by ID
-authRoute.patch("update/:id", async (req, res) => {
+authRoute.patch("/update/:id", async (req, res) => {
   try {
     const result = await UserModel.findByIdAndUpdate(req.params.id, req.body, { new: true });
     if (result) {
